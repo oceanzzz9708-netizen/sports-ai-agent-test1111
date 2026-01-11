@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体育赛事AI分析助手</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-futbol"></i> 体育赛事AI分析助手</h1>
+            <p class="subtitle">专业体育赛事分析 | 实时数据解读 | AI智能预测</p>
+        </header>
+
+        <div class="sports-grid">
+            <div class="sport-card" onclick="setSportQuery('足球')">
+                <i class="fas fa-futbol"></i>
+                <h3>足球</h3>
+                <p>英超、西甲、欧冠等赛事分析</p>
+            </div>
+            <div class="sport-card" onclick="setSportQuery('篮球')">
+                <i class="fas fa-basketball-ball"></i>
+                <h3>篮球</h3>
+                <p>NBA、CBA等赛事分析</p>
+            </div>
+            <div class="sport-card" onclick="setSportQuery('网球')">
+                <i class="fas fa-baseball-ball"></i>
+                <h3>网球</h3>
+                <p>大满贯赛事分析</p>
+            </div>
+            <div class="sport-card" onclick="setSportQuery('电竞')">
+                <i class="fas fa-gamepad"></i>
+                <h3>电竞</h3>
+                <p>英雄联盟、DOTA2等</p>
+            </div>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3><i class="fas fa-robot"></i> AI体育分析师</h3>
+            </div>
+            
+            <div id="chat-box" class="chat-box">
+                <div class="message ai-message">
+                    <div class="avatar">🤖</div>
+                    <div class="content">
+                        您好！我是体育AI分析师。请选择上方的体育类型，或直接提问任何体育赛事问题！
+                        <br><br>
+                        <strong>例如：</strong>
+                        <ul>
+                            <li>分析一下昨晚的NBA湖人队比赛</li>
+                            <li>预测欧冠决赛的结果</li>
+                            <li>比较梅西和C罗的近期数据</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    placeholder="请输入体育相关问题，例如：分析利物浦对曼城的比赛..." 
+                    onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i> 发送
+                </button>
+            </div>
+            
+            <div class="quick-questions">
+                <button onclick="askQuickQuestion('分析昨晚NBA季后赛的精彩瞬间')">NBA季后赛分析</button>
+                <button onclick="askQuickQuestion('预测欧冠决赛哪支球队会获胜')">欧冠决赛预测</button>
+                <button onclick="askQuickQuestion('分析梅西本赛季的表现数据')">球员数据分析</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by DeepSeek AI | 体育数据分析平台</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
